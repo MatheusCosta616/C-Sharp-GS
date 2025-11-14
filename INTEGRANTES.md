@@ -45,5 +45,5 @@ API RESTful desenvolvida em .NET 8.0 com C# para uma plataforma de Upskilling/Re
 
 ## 🎥 Link do Vídeo
 
-**URL:** [https://youtu.be/seu-video-aqui](https://youtu.be/seu-video-aqui)
+**URL:** [https://youtu.be/H90JfM3zYqE](https://youtu.be/H90JfM3zYqE)
 
