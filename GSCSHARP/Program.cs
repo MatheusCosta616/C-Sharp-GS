@@ -1,6 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Versioning;
 using GSCSHARP.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,39 +12,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     )
 );
 
-builder.Services.AddApiVersioning(options =>
-{
-    options.DefaultApiVersion = new ApiVersion(1, 0);
-    options.AssumeDefaultVersionWhenUnspecified = true;
-    options.ReportApiVersions = true;
-    options.ApiVersionReader = ApiVersionReader.Combine(
-        new UrlSegmentApiVersionReader(),
-        new HeaderApiVersionReader("X-Api-Version")
-    );
-});
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
         Title = "API Upskilling/Reskilling - O Futuro do Trabalho",
-        Version = "v1",
+        Version = "1.0",
         Description = "API RESTful para plataforma de Upskilling/Reskilling voltada ao futuro do trabalho (2030+). " +
-                      "Permite cadastro de usuários e acesso a trilhas de aprendizagem focadas em competências do futuro.",
-        Contact = new Microsoft.OpenApi.Models.OpenApiContact
-        {
-            Name = "FIAP - Global Solution 2025",
-            Email = "contato@fiap.com.br"
-        }
-    });
-
-    options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo
-    {
-        Title = "API Upskilling/Reskilling - O Futuro do Trabalho",
-        Version = "v2",
-        Description = "API RESTful v2 com informações expandidas incluindo relacionamentos entre entidades. " +
-                      "Versão aprimorada com dados de matrículas e competências.",
+                      "Permite cadastro de usuários e acesso a trilhas de aprendizagem focadas em competências do futuro. " +
+                      "Inclui informações expandidas com relacionamentos entre entidades, dados de matrículas e competências.",
         Contact = new Microsoft.OpenApi.Models.OpenApiContact
         {
             Name = "FIAP - Global Solution 2025",
@@ -64,16 +39,12 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
-        options.SwaggerEndpoint("/swagger/v2/swagger.json", "API v2");
-        options.RoutePrefix = string.Empty;
-    });
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "API Upskilling/Reskilling");
+    options.RoutePrefix = string.Empty;
+});
 
 app.UseHttpsRedirection();
 

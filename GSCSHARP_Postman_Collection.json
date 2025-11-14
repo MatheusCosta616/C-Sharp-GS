@@ -7,438 +7,216 @@
 	},
 	"item": [
 		{
-			"name": "API v1",
+			"name": "Usuarios",
 			"item": [
 				{
-					"name": "Usuarios v1",
-					"item": [
-						{
-							"name": "Listar Todos os Usuários",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v1/usuarios",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "usuarios"]
-								},
-								"description": "Retorna a lista completa de todos os usuários cadastrados."
-							},
-							"response": []
+					"name": "Listar Todos os Usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "usuarios"]
 						},
-						{
-							"name": "Buscar Usuário por ID",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v1/usuarios/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "usuarios", "1"]
-								},
-								"description": "Busca um usuário específico pelo ID."
-							},
-							"response": []
-						},
-						{
-							"name": "Criar Novo Usuário",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Carlos Eduardo Silva\",\n  \"email\": \"carlos.eduardo@email.com\",\n  \"areaAtuacao\": \"Desenvolvimento\",\n  \"nivelCarreira\": \"Pleno\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:5163/api/v1/usuarios",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "usuarios"]
-								},
-								"description": "Cria um novo usuário na plataforma."
-							},
-							"response": []
-						},
-						{
-							"name": "Atualizar Usuário",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"nivelCarreira\": \"Senior\",\n  \"areaAtuacao\": \"Arquitetura de Software\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:5163/api/v1/usuarios/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "usuarios", "1"]
-								},
-								"description": "Atualiza as informações de um usuário existente."
-							},
-							"response": []
-						},
-						{
-							"name": "Deletar Usuário",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v1/usuarios/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "usuarios", "1"]
-								},
-								"description": "Remove um usuário do sistema."
-							},
-							"response": []
-						}
-					],
-					"description": "Endpoints da versão 1 para gerenciamento de usuários."
+						"description": "Retorna a lista completa de usuários com suas matrículas e trilhas."
+					},
+					"response": []
 				},
 				{
-					"name": "Trilhas v1",
-					"item": [
-						{
-							"name": "Listar Todas as Trilhas",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v1/trilhas",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "trilhas"]
-								},
-								"description": "Retorna a lista completa de todas as trilhas de aprendizagem."
-							},
-							"response": []
+					"name": "Buscar Usuário por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "usuarios", "1"]
 						},
-						{
-							"name": "Buscar Trilha por ID",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v1/trilhas/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "trilhas", "1"]
-								},
-								"description": "Busca uma trilha específica pelo ID."
-							},
-							"response": []
+						"description": "Busca um usuário específico com detalhes completos de matrículas."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Novo Usuário",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Ana Costa\",\n  \"email\": \"ana.costa@email.com\",\n  \"areaAtuacao\": \"Tecnologia\",\n  \"nivelCarreira\": \"Senior\"\n}"
 						},
-						{
-							"name": "Criar Nova Trilha",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Python para Data Science\",\n  \"descricao\": \"Aprenda Python focado em análise de dados e machine learning\",\n  \"nivel\": \"INTERMEDIARIO\",\n  \"cargaHoraria\": 100,\n  \"focoPrincipal\": \"Dados\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:5163/api/v1/trilhas",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "trilhas"]
-								},
-								"description": "Cria uma nova trilha de aprendizagem."
-							},
-							"response": []
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "usuarios"]
 						},
-						{
-							"name": "Atualizar Trilha",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"cargaHoraria\": 120,\n  \"descricao\": \"Trilha completa e atualizada de Data Science\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:5163/api/v1/trilhas/2",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "trilhas", "2"]
-								},
-								"description": "Atualiza as informações de uma trilha existente."
-							},
-							"response": []
+						"description": "Cria um novo usuário na plataforma."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Usuário",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Ana Costa Silva\",\n  \"nivelCarreira\": \"Master\"\n}"
 						},
-						{
-							"name": "Deletar Trilha",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v1/trilhas/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v1", "trilhas", "1"]
-								},
-								"description": "Remove uma trilha do sistema."
-							},
-							"response": []
-						}
-					],
-					"description": "Endpoints da versão 1 para gerenciamento de trilhas."
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios/3",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "usuarios", "3"]
+						},
+						"description": "Atualiza os dados de um usuário existente."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios/3",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "usuarios", "3"]
+						},
+						"description": "Remove um usuário do sistema."
+					},
+					"response": []
 				}
-			],
-			"description": "Versão 1 da API - Endpoints básicos sem relacionamentos expandidos."
+			]
 		},
 		{
-			"name": "API v2",
+			"name": "Trilhas",
 			"item": [
 				{
-					"name": "Usuarios v2",
-					"item": [
-						{
-							"name": "Listar Todos os Usuários com Matrículas",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v2/usuarios",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "usuarios"]
-								},
-								"description": "Retorna todos os usuários com suas matrículas e trilhas associadas."
-							},
-							"response": []
+					"name": "Listar Todas as Trilhas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/trilhas",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "trilhas"]
 						},
-						{
-							"name": "Buscar Usuário por ID com Detalhes",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v2/usuarios/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "usuarios", "1"]
-								},
-								"description": "Busca um usuário com detalhes completos de matrículas e trilhas."
-							},
-							"response": []
-						},
-						{
-							"name": "Criar Novo Usuário (v2)",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Ana Paula Souza\",\n  \"email\": \"ana.paula@email.com\",\n  \"areaAtuacao\": \"UX/UI Design\",\n  \"nivelCarreira\": \"Junior\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:5163/api/v2/usuarios",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "usuarios"]
-								},
-								"description": "Cria um novo usuário (versão 2)."
-							},
-							"response": []
-						},
-						{
-							"name": "Atualizar Usuário (v2)",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Maria Silva Santos\",\n  \"nivelCarreira\": \"Pleno\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:5163/api/v2/usuarios/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "usuarios", "1"]
-								},
-								"description": "Atualiza um usuário (versão 2)."
-							},
-							"response": []
-						},
-						{
-							"name": "Deletar Usuário (v2)",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v2/usuarios/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "usuarios", "1"]
-								},
-								"description": "Remove um usuário (versão 2)."
-							},
-							"response": []
-						}
-					],
-					"description": "Endpoints da versão 2 para usuários - inclui dados de matrículas."
+						"description": "Retorna todas as trilhas com suas competências associadas."
+					},
+					"response": []
 				},
 				{
-					"name": "Trilhas v2",
-					"item": [
-						{
-							"name": "Listar Todas as Trilhas com Competências",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v2/trilhas",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "trilhas"]
-								},
-								"description": "Retorna todas as trilhas com suas competências associadas."
-							},
-							"response": []
+					"name": "Buscar Trilha por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/trilhas/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "trilhas", "1"]
 						},
-						{
-							"name": "Buscar Trilha por ID com Detalhes",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v2/trilhas/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "trilhas", "1"]
-								},
-								"description": "Busca uma trilha com detalhes completos de competências e total de matrículas."
-							},
-							"response": []
+						"description": "Busca uma trilha específica com todas as competências."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Nova Trilha",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"DevOps Moderno\",\n  \"descricao\": \"Trilha completa de DevOps e CI/CD\",\n  \"nivel\": \"INTERMEDIARIO\",\n  \"cargaHoraria\": 80,\n  \"focoPrincipal\": \"DevOps\"\n}"
 						},
-						{
-							"name": "Criar Nova Trilha (v2)",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"nome\": \"Desenvolvimento Mobile com Flutter\",\n  \"descricao\": \"Crie aplicativos mobile multiplataforma\",\n  \"nivel\": \"INTERMEDIARIO\",\n  \"cargaHoraria\": 90,\n  \"focoPrincipal\": \"Mobile\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:5163/api/v2/trilhas",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "trilhas"]
-								},
-								"description": "Cria uma nova trilha (versão 2)."
-							},
-							"response": []
+						"url": {
+							"raw": "http://localhost:8080/api/v1/trilhas",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "trilhas"]
 						},
-						{
-							"name": "Atualizar Trilha (v2)",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"nome\": \"IA Avançada para Iniciantes\",\n  \"cargaHoraria\": 50\n}"
-								},
-								"url": {
-									"raw": "http://localhost:5163/api/v2/trilhas/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "trilhas", "1"]
-								},
-								"description": "Atualiza uma trilha (versão 2)."
-							},
-							"response": []
+						"description": "Cria uma nova trilha de aprendizagem."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Trilha",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"descricao\": \"Trilha completa e atualizada de DevOps, CI/CD e Cloud Native\",\n  \"cargaHoraria\": 100\n}"
 						},
-						{
-							"name": "Deletar Trilha (v2)",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5163/api/v2/trilhas/1",
-									"protocol": "http",
-									"host": ["localhost"],
-									"port": "5163",
-									"path": ["api", "v2", "trilhas", "1"]
-								},
-								"description": "Remove uma trilha (versão 2)."
-							},
-							"response": []
-						}
-					],
-					"description": "Endpoints da versão 2 para trilhas - inclui competências e estatísticas."
+						"url": {
+							"raw": "http://localhost:8080/api/v1/trilhas/5",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "trilhas", "5"]
+						},
+						"description": "Atualiza os dados de uma trilha existente."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Trilha",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/trilhas/5",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "trilhas", "5"]
+						},
+						"description": "Remove uma trilha do sistema."
+					},
+					"response": []
 				}
-			],
-			"description": "Versão 2 da API - Endpoints expandidos com relacionamentos completos."
+			]
 		},
 		{
 			"name": "Testes de Validação",
 			"item": [
 				{
-					"name": "Criar Usuário - Email Inválido (400)",
+					"name": "Erro 400 - Email Inválido",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -452,43 +230,18 @@
 							"raw": "{\n  \"nome\": \"Teste\",\n  \"email\": \"email-invalido\",\n  \"areaAtuacao\": \"TI\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:5163/api/v1/usuarios",
+							"raw": "http://localhost:8080/api/v1/usuarios",
 							"protocol": "http",
 							"host": ["localhost"],
-							"port": "5163",
-							"path": ["api", "v1", "usuarios"]
+							"port": "8080",
+							"path": ["api", "usuarios"]
 						},
-						"description": "Testa validação de email inválido - deve retornar 400 Bad Request."
+						"description": "Testa validação de email inválido - esperado: 400 Bad Request"
 					},
 					"response": []
 				},
 				{
-					"name": "Criar Usuário - Email Duplicado (422)",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"nome\": \"Teste Duplicado\",\n  \"email\": \"maria.silva@email.com\",\n  \"areaAtuacao\": \"TI\",\n  \"nivelCarreira\": \"Junior\"\n}"
-						},
-						"url": {
-							"raw": "http://localhost:5163/api/v1/usuarios",
-							"protocol": "http",
-							"host": ["localhost"],
-							"port": "5163",
-							"path": ["api", "v1", "usuarios"]
-						},
-						"description": "Testa email duplicado - deve retornar 422 Unprocessable Entity."
-					},
-					"response": []
-				},
-				{
-					"name": "Criar Usuário - Campos Obrigatórios Faltando (400)",
+					"name": "Erro 400 - Campos Obrigatórios",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -502,34 +255,59 @@
 							"raw": "{\n  \"areaAtuacao\": \"TI\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:5163/api/v1/usuarios",
+							"raw": "http://localhost:8080/api/v1/usuarios",
 							"protocol": "http",
 							"host": ["localhost"],
-							"port": "5163",
-							"path": ["api", "v1", "usuarios"]
+							"port": "8080",
+							"path": ["api", "usuarios"]
 						},
-						"description": "Testa campos obrigatórios faltando - deve retornar 400 Bad Request."
+						"description": "Testa validação de campos obrigatórios - esperado: 400 Bad Request"
 					},
 					"response": []
 				},
 				{
-					"name": "Buscar Usuário Inexistente (404)",
+					"name": "Erro 422 - Email Duplicado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Duplicado\",\n  \"email\": \"maria.silva@email.com\",\n  \"areaAtuacao\": \"TI\",\n  \"nivelCarreira\": \"Junior\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "usuarios"]
+						},
+						"description": "Testa validação de email duplicado - esperado: 422 Unprocessable Entity"
+					},
+					"response": []
+				},
+				{
+					"name": "Erro 404 - Usuário Não Encontrado",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5163/api/v1/usuarios/9999",
+							"raw": "http://localhost:8080/api/v1/usuarios/999",
 							"protocol": "http",
 							"host": ["localhost"],
-							"port": "5163",
-							"path": ["api", "v1", "usuarios", "9999"]
+							"port": "8080",
+							"path": ["api", "usuarios", "999"]
 						},
-						"description": "Testa busca de usuário inexistente - deve retornar 404 Not Found."
+						"description": "Testa busca de usuário inexistente - esperado: 404 Not Found"
 					},
 					"response": []
 				},
 				{
-					"name": "Criar Trilha - Nível Inválido (400)",
+					"name": "Erro 400 - Nível Inválido Trilha",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -540,21 +318,21 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nome\": \"Trilha Teste\",\n  \"nivel\": \"NIVEL_INVALIDO\",\n  \"cargaHoraria\": 40\n}"
+							"raw": "{\n  \"nome\": \"Teste\",\n  \"descricao\": \"Teste\",\n  \"nivel\": \"EXPERT\",\n  \"cargaHoraria\": 40,\n  \"focoPrincipal\": \"Teste\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:5163/api/v1/trilhas",
+							"raw": "http://localhost:8080/api/v1/trilhas",
 							"protocol": "http",
 							"host": ["localhost"],
-							"port": "5163",
-							"path": ["api", "v1", "trilhas"]
+							"port": "8080",
+							"path": ["api", "trilhas"]
 						},
-						"description": "Testa nível inválido - deve retornar 400 Bad Request."
+						"description": "Testa validação de nível inválido - esperado: 400 Bad Request"
 					},
 					"response": []
 				},
 				{
-					"name": "Criar Trilha - Carga Horária Inválida (400)",
+					"name": "Erro 400 - Carga Horária Inválida",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -565,28 +343,20 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nome\": \"Trilha Teste\",\n  \"nivel\": \"INICIANTE\",\n  \"cargaHoraria\": -10\n}"
+							"raw": "{\n  \"nome\": \"Teste\",\n  \"descricao\": \"Teste\",\n  \"nivel\": \"INICIANTE\",\n  \"cargaHoraria\": 1500,\n  \"focoPrincipal\": \"Teste\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:5163/api/v1/trilhas",
+							"raw": "http://localhost:8080/api/v1/trilhas",
 							"protocol": "http",
 							"host": ["localhost"],
-							"port": "5163",
-							"path": ["api", "v1", "trilhas"]
+							"port": "8080",
+							"path": ["api", "trilhas"]
 						},
-						"description": "Testa carga horária negativa - deve retornar 400 Bad Request."
+						"description": "Testa validação de carga horária fora do range - esperado: 400 Bad Request"
 					},
 					"response": []
 				}
-			],
-			"description": "Testes de validação e tratamento de erros da API."
-		}
-	],
-	"variable": [
-		{
-			"key": "baseUrl",
-			"value": "http://localhost:5163",
-			"type": "string"
+			]
 		}
 	]
 }

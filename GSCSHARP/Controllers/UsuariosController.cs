@@ -4,11 +4,10 @@ using GSCSHARP.Data;
 using GSCSHARP.DTOs;
 using GSCSHARP.Models;
 
-namespace GSCSHARP.Controllers.V2
+namespace GSCSHARP.Controllers
 {
     [ApiController]
-    [Route("api/v2/[controller]")]
-    [ApiVersion("2.0")]
+    [Route("api/v1/[controller]")]
     public class UsuariosController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
